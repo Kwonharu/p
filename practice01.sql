@@ -1,13 +1,13 @@
---¹®Á¦1
---»ç¿øÀÇ »ç¿ø¹øÈ£ ÀÌ¸§(first_name) ¼º(last_name) ÀÔ»çÀÏÀ» Ãâ·ÂÇÏ¼¼¿ä
+--ë¬¸ì œ1
+--ì‚¬ì›ì˜ ì‚¬ì›ë²ˆí˜¸ ì´ë¦„(first_name) ì„±(last_name) ìž…ì‚¬ì¼ì„ ì¶œë ¥í•˜ì„¸ìš”
 select  first_name, 
         last_name, 
         hire_date
 from employees;
 
---¹®Á¦2
---»ç¿øÀÇ »ç¿ø¹øÈ£ ÀÌ¸§(first_name) ¼º(last_name) ÀÔ»çÀÏÀ» Ãâ·ÂÇÏ¼¼¿ä
---(»ç¿ø¹øÈ£ ¿Ã¸²Â÷¼øÀ¸·Î)
+--ë¬¸ì œ2
+--ì‚¬ì›ì˜ ì‚¬ì›ë²ˆí˜¸ ì´ë¦„(first_name) ì„±(last_name) ìž…ì‚¬ì¼ì„ ì¶œë ¥í•˜ì„¸ìš”
+--(ì‚¬ì›ë²ˆí˜¸ ì˜¬ë¦¼ì°¨ìˆœìœ¼ë¡œ)
 select  employee_id,
         first_name, 
         last_name, 
@@ -15,9 +15,9 @@ select  employee_id,
 from employees
 order by employee_id asc;
 
---¹®Á¦3
---»ç¿øÀÇ »ç¿ø¹øÈ£ ÀÌ¸§(first_name) ¼º(last_name) ÀÔ»çÀÏÀ» Ãâ·ÂÇÏ¼¼¿ä
---(ÀÔ»çÀÏ ³»¸²Â÷¼øÀ¸·Î Ãâ·ÂÇÏµÇ ÀÔ»çÀÏÀÌ °°À¸¸é »ç¿ø¹øÈ£ ¿Ã¸²Â÷¼øÀ¸·Î Ãâ·Â)
+--ë¬¸ì œ3
+--ì‚¬ì›ì˜ ì‚¬ì›ë²ˆí˜¸ ì´ë¦„(first_name) ì„±(last_name) ìž…ì‚¬ì¼ì„ ì¶œë ¥í•˜ì„¸ìš”
+--(ìž…ì‚¬ì¼ ë‚´ë¦¼ì°¨ìˆœìœ¼ë¡œ ì¶œë ¥í•˜ë˜ ìž…ì‚¬ì¼ì´ ê°™ìœ¼ë©´ ì‚¬ì›ë²ˆí˜¸ ì˜¬ë¦¼ì°¨ìˆœìœ¼ë¡œ ì¶œë ¥)
 select employee_id,
         first_name, 
         last_name, 
@@ -25,18 +25,18 @@ select employee_id,
 from employees
 order by hire_date desc, employee_id asc;
 
---¹®Á¦4
---»ç¿øÀÇ ÀÌ¸§(fisrt_name)°ú ¼º(last_name)À» ºÙ¿©¼­ '¼º ¸í' ÀÌ¶ó´Â 1°³ÀÇ ÀÌ¸§À¸·Î(ÀÌ¸§°ú ¼ºÀº 1°³ÀÇ °ø¹éÀ¸·Î ±¸ºÐ), ±×¸®°í ÀüÈ­¹øÈ£ ÀÔ»çÀÏ ¿¬ºÀ ºÎ¼­¹øÈ£°¡ Ç¥½ÃµÇµµ·Ï Ãâ·ÂÇÏ¼¼¿ä
-select  first_name || ' ' || last_name "¼º ¸í",
+--ë¬¸ì œ4
+--ì‚¬ì›ì˜ ì´ë¦„(fisrt_name)ê³¼ ì„±(last_name)ì„ ë¶™ì—¬ì„œ 'ì„± ëª…' ì´ë¼ëŠ” 1ê°œì˜ ì´ë¦„ìœ¼ë¡œ(ì´ë¦„ê³¼ ì„±ì€ 1ê°œì˜ ê³µë°±ìœ¼ë¡œ êµ¬ë¶„), ê·¸ë¦¬ê³  ì „í™”ë²ˆí˜¸ ìž…ì‚¬ì¼ ì—°ë´‰ ë¶€ì„œë²ˆí˜¸ê°€ í‘œì‹œë˜ë„ë¡ ì¶œë ¥í•˜ì„¸ìš”
+select  first_name || ' ' || last_name "ì„± ëª…",
         phone_number,
         hire_date,
         salary,
         department_id
 from employees;
 
---¹®Á¦5
---»ç¿øÀÇ ÀÌ¸§(fisrt_name)°ú ¼º(last_name)À» ºÙ¿©¼­ '¼º ¸í' ÀÌ¶ó´Â 1°³ÀÇ ÀÌ¸§À¸·Î(ÀÌ¸§°ú ¼ºÀº 1°³ÀÇ °ø¹éÀ¸·Î ±¸ºÐ), ±×¸®°í ÀüÈ­¹øÈ£ ÀÔ»çÀÏ ¿¬ºÀ ºÎ¼­¹øÈ£¸¦ ÃÖ±Ù¿¡ ÀÔ»çÇÑ »ç¶÷ºÎÅÍ Ãâ·ÂÇÏ¼¼¿ä
-select  first_name || ' ' || last_name "¼º ¸í",
+--ë¬¸ì œ5
+--ì‚¬ì›ì˜ ì´ë¦„(fisrt_name)ê³¼ ì„±(last_name)ì„ ë¶™ì—¬ì„œ 'ì„± ëª…' ì´ë¼ëŠ” 1ê°œì˜ ì´ë¦„ìœ¼ë¡œ(ì´ë¦„ê³¼ ì„±ì€ 1ê°œì˜ ê³µë°±ìœ¼ë¡œ êµ¬ë¶„), ê·¸ë¦¬ê³  ì „í™”ë²ˆí˜¸ ìž…ì‚¬ì¼ ì—°ë´‰ ë¶€ì„œë²ˆí˜¸ë¥¼ ìµœê·¼ì— ìž…ì‚¬í•œ ì‚¬ëžŒë¶€í„° ì¶œë ¥í•˜ì„¸ìš”
+select  first_name || ' ' || last_name "ì„± ëª…",
         phone_number,
         hire_date,
         salary,
@@ -44,9 +44,9 @@ select  first_name || ' ' || last_name "¼º ¸í",
 from employees
 order by hire_date desc;
 
---¹®Á¦6
---»ç¿øÀÇ ÀÌ¸§(fisrt_name)°ú ¼º(last_name)À» ºÙ¿©¼­ '¼º ¸í' ÀÌ¶ó´Â 1°³ÀÇ ÀÌ¸§À¸·Î(ÀÌ¸§°ú ¼ºÀº 1°³ÀÇ °ø¹éÀ¸·Î ±¸ºÐ), ±×¸®°í ÀüÈ­¹øÈ£ ÀÔ»çÀÏ ¿¬ºÀ ºÎ¼­¹øÈ£¸¦ ºÎ¼­¹øÈ£ ¼øÀ¸·Î Ãâ·ÂÇÏ¼¼¿ä
-select  first_name || ' ' || last_name "¼º ¸í",
+--ë¬¸ì œ6
+--ì‚¬ì›ì˜ ì´ë¦„(fisrt_name)ê³¼ ì„±(last_name)ì„ ë¶™ì—¬ì„œ 'ì„± ëª…' ì´ë¼ëŠ” 1ê°œì˜ ì´ë¦„ìœ¼ë¡œ(ì´ë¦„ê³¼ ì„±ì€ 1ê°œì˜ ê³µë°±ìœ¼ë¡œ êµ¬ë¶„), ê·¸ë¦¬ê³  ì „í™”ë²ˆí˜¸ ìž…ì‚¬ì¼ ì—°ë´‰ ë¶€ì„œë²ˆí˜¸ë¥¼ ë¶€ì„œë²ˆí˜¸ ìˆœìœ¼ë¡œ ì¶œë ¥í•˜ì„¸ìš”
+select  first_name || ' ' || last_name "ì„± ëª…",
         phone_number,
         hire_date,
         salary,
@@ -54,9 +54,9 @@ select  first_name || ' ' || last_name "¼º ¸í",
 from employees
 order by department_id asc;
 
---¹®Á¦7
---»ç¿øÀÇ ÀÌ¸§(fisrt_name)°ú ¼º(last_name)À» ºÙ¿©¼­ '¼º ¸í' ÀÌ¶ó´Â 1°³ÀÇ ÀÌ¸§À¸·Î(ÀÌ¸§°ú ¼ºÀº 1°³ÀÇ °ø¹éÀ¸·Î ±¸ºÐ), ±×¸®°í ÀüÈ­¹øÈ£ ÀÔ»çÀÏ ¿¬ºÀ ºÎ¼­¹øÈ£¸¦ ºÎ¼­¹øÈ£ ¿Ã¸²Â÷¼øÀ¸·Î Ãâ·ÂÇÏ¼¼¿ä. ºÎ¼­¹øÈ£°¡ °°Àº°æ¿ì ÀÔ»çÀÏÀÌ ´ÊÀº »ç¶÷ºÎÅÍ Ãâ·ÂÇÏ¼¼¿ä
-select  first_name || ' ' || last_name "¼º ¸í",
+--ë¬¸ì œ7
+--ì‚¬ì›ì˜ ì´ë¦„(fisrt_name)ê³¼ ì„±(last_name)ì„ ë¶™ì—¬ì„œ 'ì„± ëª…' ì´ë¼ëŠ” 1ê°œì˜ ì´ë¦„ìœ¼ë¡œ(ì´ë¦„ê³¼ ì„±ì€ 1ê°œì˜ ê³µë°±ìœ¼ë¡œ êµ¬ë¶„), ê·¸ë¦¬ê³  ì „í™”ë²ˆí˜¸ ìž…ì‚¬ì¼ ì—°ë´‰ ë¶€ì„œë²ˆí˜¸ë¥¼ ë¶€ì„œë²ˆí˜¸ ì˜¬ë¦¼ì°¨ìˆœìœ¼ë¡œ ì¶œë ¥í•˜ì„¸ìš”. ë¶€ì„œë²ˆí˜¸ê°€ ê°™ì€ê²½ìš° ìž…ì‚¬ì¼ì´ ëŠ¦ì€ ì‚¬ëžŒë¶€í„° ì¶œë ¥í•˜ì„¸ìš”
+select  first_name || ' ' || last_name "ì„± ëª…",
         phone_number,
         hire_date,
         salary,
@@ -64,10 +64,10 @@ select  first_name || ' ' || last_name "¼º ¸í",
 from employees
 order by department_id asc, hire_date desc;
 
---¹®Á¦8
---»ç¿øÀÇ ÀÌ¸§(fisrt_name)°ú ¼º(last_name)À» ºÙ¿©¼­ '¼º ¸í' ÀÌ¶ó´Â 1°³ÀÇ ÀÌ¸§À¸·Î(ÀÌ¸§°ú ¼ºÀº 1°³ÀÇ °ø¹éÀ¸·Î ±¸ºÐ), ±×¸®°í ÀüÈ­¹øÈ£ ÀÔ»çÀÏ ¿¬ºÀ ºÎ¼­¹øÈ£¸¦ ºÎ¼­¹øÈ£ ¿Ã¸²Â÷¼øÀ¸·Î Ãâ·ÂÇÏ¼¼¿ä. ºÎ¼­¹øÈ£°¡ °°Àº°æ¿ì ÀÔ»çÀÏÀÌ ´ÊÀº »ç¶÷ºÎÅÍ Ãâ·ÂÇÏ¼¼¿ä
---´Ü ºÎ¼­¹øÈ£°¡ ¾ø´Â »ç¶÷Àº ºÎ¼­¹øÈ£¸¦ 0À¸·Î Ç¥½ÃÇÕ´Ï´Ù.
-select  first_name || ' ' || last_name "¼º ¸í",
+--ë¬¸ì œ8
+--ì‚¬ì›ì˜ ì´ë¦„(fisrt_name)ê³¼ ì„±(last_name)ì„ ë¶™ì—¬ì„œ 'ì„± ëª…' ì´ë¼ëŠ” 1ê°œì˜ ì´ë¦„ìœ¼ë¡œ(ì´ë¦„ê³¼ ì„±ì€ 1ê°œì˜ ê³µë°±ìœ¼ë¡œ êµ¬ë¶„), ê·¸ë¦¬ê³  ì „í™”ë²ˆí˜¸ ìž…ì‚¬ì¼ ì—°ë´‰ ë¶€ì„œë²ˆí˜¸ë¥¼ ë¶€ì„œë²ˆí˜¸ ì˜¬ë¦¼ì°¨ìˆœìœ¼ë¡œ ì¶œë ¥í•˜ì„¸ìš”. ë¶€ì„œë²ˆí˜¸ê°€ ê°™ì€ê²½ìš° ìž…ì‚¬ì¼ì´ ëŠ¦ì€ ì‚¬ëžŒë¶€í„° ì¶œë ¥í•˜ì„¸ìš”
+--ë‹¨ ë¶€ì„œë²ˆí˜¸ê°€ ì—†ëŠ” ì‚¬ëžŒì€ ë¶€ì„œë²ˆí˜¸ë¥¼ 0ìœ¼ë¡œ í‘œì‹œí•©ë‹ˆë‹¤.
+select  first_name || ' ' || last_name "ì„± ëª…",
         phone_number,
         hire_date,
         salary,
@@ -75,59 +75,59 @@ select  first_name || ' ' || last_name "¼º ¸í",
 from employees
 order by department_id asc, hire_date desc;
 
---¹®Á¦9
---ÀüÃ¼Á÷¿øÀÇ ´ÙÀ½ Á¤º¸¸¦ Á¶È¸ÇÏ¼¼¿ä. Á¤·ÄÀº ÀÔ»çÀÏ(hire_date)ÀÇ ¿Ã¸²Â÷¼ø(ASC)À¸·Î °¡Àå ¼±ÀÓºÎÅÍ Ãâ·ÂÀÌ µÇµµ·Ï ÇÏ¼¼¿ä. ÀÌ¸§(first_name last_name),  ¿¬ºÀ(salary),  ÀüÈ­¹øÈ£(phone_number), ÀÔ»çÀÏ(hire_date) ¼ø¼­ÀÌ°í ¡°ÀÌ¸§¡±, ¡°¿¬ºÀ¡±, ¡°ÀüÈ­-¹øÈ£¡±, ¡°ÀÔ»çÀÏ¡± ·Î ÄÃ·³ÀÌ¸§À» ´ëÃ¼ÇØ º¸¼¼¿ä.
-select  first_name || ' ' || last_name ÀÌ¸§,
-        salary ¿¬ºÀ,
-        phone_number ÀüÈ­¹øÈ£,
-        hire_date ÀÔ»çÀÏ
+--ë¬¸ì œ9
+--ì „ì²´ì§ì›ì˜ ë‹¤ìŒ ì •ë³´ë¥¼ ì¡°íšŒí•˜ì„¸ìš”. ì •ë ¬ì€ ìž…ì‚¬ì¼(hire_date)ì˜ ì˜¬ë¦¼ì°¨ìˆœ(ASC)ìœ¼ë¡œ ê°€ìž¥ ì„ ìž„ë¶€í„° ì¶œë ¥ì´ ë˜ë„ë¡ í•˜ì„¸ìš”. ì´ë¦„(first_name last_name),  ì—°ë´‰(salary),  ì „í™”ë²ˆí˜¸(phone_number), ìž…ì‚¬ì¼(hire_date) ìˆœì„œì´ê³  â€œì´ë¦„â€, â€œì—°ë´‰â€, â€œì „í™”-ë²ˆí˜¸â€, â€œìž…ì‚¬ì¼â€ ë¡œ ì»¬ëŸ¼ì´ë¦„ì„ ëŒ€ì²´í•´ ë³´ì„¸ìš”.
+select  first_name || ' ' || last_name ì´ë¦„,
+        salary ì—°ë´‰,
+        phone_number ì „í™”ë²ˆí˜¸,
+        hire_date ìž…ì‚¬ì¼
 from employees
 order by hire_date asc;
 
---¹®Á¦10
---¿¬ºÀÀÌ 12000 ÀÌ»óµÇ´Â Á÷¿øµéÀÇ LAST_NAME ¹× ¿¬ºÀÀ» Á¶È¸ÇÏ¼¼¿ä.
+--ë¬¸ì œ10
+--ì—°ë´‰ì´ 12000 ì´ìƒë˜ëŠ” ì§ì›ë“¤ì˜ LAST_NAME ë° ì—°ë´‰ì„ ì¡°íšŒí•˜ì„¸ìš”.
 select  last_name,
         salary   
 from employees
 where salary >= 12000;
 
---¹®Á¦11
---¿¬ºÀÀÌ 12000 ÀÌ»óµÇ´Â Á÷¿øµéÀÇ LAST_NAME ¹× ¿¬ºÀÀ» Á¶È¸ÇÏ¼¼¿ä.
---Ãâ·Â¼ø¼­´Â ¿¬ºÀÀÌ ³ôÀº»ç¶÷ºÎÅÍ Ãâ·ÂÇÕ´Ï´Ù.
+--ë¬¸ì œ11
+--ì—°ë´‰ì´ 12000 ì´ìƒë˜ëŠ” ì§ì›ë“¤ì˜ LAST_NAME ë° ì—°ë´‰ì„ ì¡°íšŒí•˜ì„¸ìš”.
+--ì¶œë ¥ìˆœì„œëŠ” ì—°ë´‰ì´ ë†’ì€ì‚¬ëžŒë¶€í„° ì¶œë ¥í•©ë‹ˆë‹¤.
 select  last_name,
         salary   
 from employees
 where salary >= 12000
 order by salary desc;
 
---¹®Á¦12
---¿¬ºÀÀÌ 12000 ÀÌ»óµÇ´Â Á÷¿øµéÀÇ LAST_NAME ¹× ¿¬ºÀÀ» Á¶È¸ÇÏ¼¼¿ä.
---¿¬ºÀÀÌ ³ôÀº»ç¶÷ºÎÅÍ Ãâ·ÂÇÏ°í ¿¬ºÀÀÌ °°À¸¸é ÀÔ»çÀÏÀÌ ºü¸¥ »ç¶÷ºÎÅÍ Ãâ·ÂÇÏ¼¼¿ä
+--ë¬¸ì œ12
+--ì—°ë´‰ì´ 12000 ì´ìƒë˜ëŠ” ì§ì›ë“¤ì˜ LAST_NAME ë° ì—°ë´‰ì„ ì¡°íšŒí•˜ì„¸ìš”.
+--ì—°ë´‰ì´ ë†’ì€ì‚¬ëžŒë¶€í„° ì¶œë ¥í•˜ê³  ì—°ë´‰ì´ ê°™ìœ¼ë©´ ìž…ì‚¬ì¼ì´ ë¹ ë¥¸ ì‚¬ëžŒë¶€í„° ì¶œë ¥í•˜ì„¸ìš”
 select  last_name,
         salary   
 from employees
 where salary >= 12000
 order by salary desc, hire_date asc;
 
---¹®Á¦13
---07/01/01 ÀÏ ÀÌÈÄ¿¡ ÀÔ»çÇÑ »ç¿øµéÀÇ ÀÌ¸§°ú ÀÔ»çÀÏÀ» Ãâ·ÂÇÏ¼¼¿ä
---ÀÔ»çÀÏÀº 03-07-2007 °ú °°ÀÌ  ÀÏ, ¿ù, ³âµµ(¼­¾ç½Ä) ·Î Ãâ·ÂÇÏ¼¼¿ä
---ÀÌ¸§Àº ¸ðµÎ ´ë¹®ÀÚ·Î Ãâ·ÂÇÏ¼¼¿ä
+--ë¬¸ì œ13
+--07/01/01 ì¼ ì´í›„ì— ìž…ì‚¬í•œ ì‚¬ì›ë“¤ì˜ ì´ë¦„ê³¼ ìž…ì‚¬ì¼ì„ ì¶œë ¥í•˜ì„¸ìš”
+--ìž…ì‚¬ì¼ì€ 03-07-2007 ê³¼ ê°™ì´  ì¼, ì›”, ë…„ë„(ì„œì–‘ì‹) ë¡œ ì¶œë ¥í•˜ì„¸ìš”
+--ì´ë¦„ì€ ëª¨ë‘ ëŒ€ë¬¸ìžë¡œ ì¶œë ¥í•˜ì„¸ìš”
 select  upper(first_name),
         to_char(hire_date, 'dd-mm-yyyy')
 from employees
 where hire_date > '07/01/01';
 
---¹®Á¦14
---»ç¿ø¹øÈ£°¡ 100 ÀÎ »ç¶÷ÀÇ »ç¹ø LAST_NAME °ú ºÎ¼­ ¹øÈ£¸¦ Ãâ·ÂÇÏ¼¼¿ä
+--ë¬¸ì œ14
+--ì‚¬ì›ë²ˆí˜¸ê°€ 100 ì¸ ì‚¬ëžŒì˜ ì‚¬ë²ˆ LAST_NAME ê³¼ ë¶€ì„œ ë²ˆí˜¸ë¥¼ ì¶œë ¥í•˜ì„¸ìš”
 select  last_name,
         department_id
 from employees
 where department_id = 100;
 
---¹®Á¦15
---»ç¿ø¹øÈ£°¡ 100¹ø´ëÀÎ »ç¶÷ÀÇ »ç¹ø LAST_NAME °ú ºÎ¼­ ¹øÈ£¸¦ Á¶È¸ÇÑ´Ù.
---(100~199¹ø)
+--ë¬¸ì œ15
+--ì‚¬ì›ë²ˆí˜¸ê°€ 100ë²ˆëŒ€ì¸ ì‚¬ëžŒì˜ ì‚¬ë²ˆ LAST_NAME ê³¼ ë¶€ì„œ ë²ˆí˜¸ë¥¼ ì¡°íšŒí•œë‹¤.
+--(100~199ë²ˆ)
 select  last_name,
         department_id
 from employees
@@ -135,18 +135,18 @@ where department_id >= 100
 and department_id <= 199;
 --where trunc(department_id, -2) = 100;
 
---¹®Á¦16
---¿¬ºÀÀÌ 5000 ¿¡¼­ 12000ÀÇ ¹üÀ§ ÀÌ¿ÜÀÎ »ç¶÷µéÀÇ LAST_NAME ¹× ¿¬ºÀÀ» Á¶È¸Èù´Ù.
---(¿¬ºÀÀÌ 5000 ÀÎ »ç¶÷°ú 12000 ÀÎ »ç¶÷Àº Ãâ·ÂÇÏÁö ¾Ê½À´Ï´Ù.)
+--ë¬¸ì œ16
+--ì—°ë´‰ì´ 5000 ì—ì„œ 12000ì˜ ë²”ìœ„ ì´ì™¸ì¸ ì‚¬ëžŒë“¤ì˜ LAST_NAME ë° ì—°ë´‰ì„ ì¡°íšŒížŒë‹¤.
+--(ì—°ë´‰ì´ 5000 ì¸ ì‚¬ëžŒê³¼ 12000 ì¸ ì‚¬ëžŒì€ ì¶œë ¥í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.)
 select  last_name,
         salary
 from employees
 where salary >= 5000
 and salary <= 12000;
 
---¹®Á¦17
---07³âµµ¿¡ °í¿ëµÈ ¸ðµç »ç¶÷µéÀÇ LAST_NAME ¹× ÀÔ»çÀÏÀ» Á¶È¸ÇÑ´Ù.
---ÀÔ»çÀÏÀÌ ´ÊÀº¼øÀ¸·Î Ãâ·ÂÇÏ¼¼¿ä ÀÔ»çÀÏÀº  2007-06-17 °ú °°ÀÌ Ãâ·ÂÇÏ¼¼¿ä
+--ë¬¸ì œ17
+--07ë…„ë„ì— ê³ ìš©ëœ ëª¨ë“  ì‚¬ëžŒë“¤ì˜ LAST_NAME ë° ìž…ì‚¬ì¼ì„ ì¡°íšŒí•œë‹¤.
+--ìž…ì‚¬ì¼ì´ ëŠ¦ì€ìˆœìœ¼ë¡œ ì¶œë ¥í•˜ì„¸ìš” ìž…ì‚¬ì¼ì€  2007-06-17 ê³¼ ê°™ì´ ì¶œë ¥í•˜ì„¸ìš”
 select  last_name,
         to_char(hire_date, 'yyyy-mm-dd')
 from employees
@@ -155,22 +155,22 @@ from employees
 where to_char(hire_date, 'yy') = '07'
 order by hire_date desc;
 
---¹®Á¦18
---¿¬ºÀÀÌ 2,500, 3,500, 7000 ÀÎ »ç¶÷À» Ãâ·ÂÇÏ¼¼¿ä
+--ë¬¸ì œ18
+--ì—°ë´‰ì´ 2,500, 3,500, 7000 ì¸ ì‚¬ëžŒì„ ì¶œë ¥í•˜ì„¸ìš”
 select last_name
 from employees
 where salary in ('2500', '3500', '7000');
 
---¹®Á¦19
---¿¬ºÀÀÌ 2,500, 3,500, 7000 ÀÌ ¾Æ´Ñ »ç¶÷À» Ãâ·ÂÇÏ¼¼¿ä
+--ë¬¸ì œ19
+--ì—°ë´‰ì´ 2,500, 3,500, 7000 ì´ ì•„ë‹Œ ì‚¬ëžŒì„ ì¶œë ¥í•˜ì„¸ìš”
 select last_name
 from employees
 where salary != 2500
 or salary != 3500
 or salary != 7000;
 
---¹®Á¦20
---¿¬ºÀÀÌ 2,500, 3,500, 7000 ÀÌ ¾Æ´Ï¸ç Á÷¾÷ÀÌ SA_REP ÀÎ »ç¶÷À» Ãâ·ÂÇÏ¼¼¿ä
+--ë¬¸ì œ20
+--ì—°ë´‰ì´ 2,500, 3,500, 7000 ì´ ì•„ë‹ˆë©° ì§ì—…ì´ SA_REP ì¸ ì‚¬ëžŒì„ ì¶œë ¥í•˜ì„¸ìš”
 select last_name
 from employees
 where salary != 2500
@@ -178,8 +178,8 @@ and salary != 3500
 and salary != 7000
 and job_id = 'SA_REP';
 
---¹®Á¦21
---¿¬ºÀÀÌ 2,500, 3,500, 7000 ÀÌ ¾Æ´Ï¸ç Á÷¾÷ÀÌ SA_REP °ú ST_CLERK  ÀÎ »ç¶÷ ¸ðµÎ¸¦ ±¸ÇÏ½Ã¿ä
+--ë¬¸ì œ21
+--ì—°ë´‰ì´ 2,500, 3,500, 7000 ì´ ì•„ë‹ˆë©° ì§ì—…ì´ SA_REP ê³¼ ST_CLERK  ì¸ ì‚¬ëžŒ ëª¨ë‘ë¥¼ êµ¬í•˜ì‹œìš”
 select last_name
 from employees
 where salary != 2500
@@ -188,8 +188,8 @@ and salary != 7000
 and job_id = 'SA_REP'
 or job_id = 'ST_CLERK';
 
---¹®Á¦22
---ºÎ¼­¹øÈ£°¡ 20 ¹ø ¶Ç´Â 50 ¹ø ºÎ¼­¿¡¼­ ±Ù¹«ÇÏ´Â ¸ðµç »ç¿øµéÀÇ LAST_NAME ¹× ºÎ¼­ ¹øÈ£¸¦ ¾ËÆÄºª¼øÀ¸·Î Á¶È¸ÇÑ´Ù. (a->z)
+--ë¬¸ì œ22
+--ë¶€ì„œë²ˆí˜¸ê°€ 20 ë²ˆ ë˜ëŠ” 50 ë²ˆ ë¶€ì„œì—ì„œ ê·¼ë¬´í•˜ëŠ” ëª¨ë“  ì‚¬ì›ë“¤ì˜ LAST_NAME ë° ë¶€ì„œ ë²ˆí˜¸ë¥¼ ì•ŒíŒŒë²³ìˆœìœ¼ë¡œ ì¡°íšŒí•œë‹¤. (a->z)
 select  last_name, 
         department_id
 from employees
@@ -197,24 +197,24 @@ where department_id between 20 and 50
 order by last_name asc, department_id asc;
 
 
---¹®Á¦23
---ºÎ¼­¹øÈ£°¡ 20 ¹ø ¹× 50 ¹ø ºÎ¼­¿¡ ±Ù¹«ÇÏ¸ç, ¿¬ºÀÀÌ 5000 ~ 12,000 »çÀÌÀÎ »ç¿øµéÀÇ LAST_NAME ¹× ¿¬ºÀÀ» Á¶È¸ÇÑ´Ù.
+--ë¬¸ì œ23
+--ë¶€ì„œë²ˆí˜¸ê°€ 20 ë²ˆ ë° 50 ë²ˆ ë¶€ì„œì— ê·¼ë¬´í•˜ë©°, ì—°ë´‰ì´ 5000 ~ 12,000 ì‚¬ì´ì¸ ì‚¬ì›ë“¤ì˜ LAST_NAME ë° ì—°ë´‰ì„ ì¡°íšŒí•œë‹¤.
 select  last_name, 
         salary
 from employees
 where department_id between 20 and 50
 and salary between 5000 and 12000;
 
---¹®Á¦24
---LAST_NAME ¿¡ a ¹×(OR) e ±ÛÀÚ°¡ ÀÖ´Â »ç¿øµéÀÇ LAST_NAME °ú »ç¹øÀ» Á¶È¸ÇÑ´Ù.
+--ë¬¸ì œ24
+--LAST_NAME ì— a ë°(OR) e ê¸€ìžê°€ ìžˆëŠ” ì‚¬ì›ë“¤ì˜ LAST_NAME ê³¼ ì‚¬ë²ˆì„ ì¡°íšŒí•œë‹¤.
 select  last_name, 
         employee_id
 from employees
 where last_name like '%a%'
 or last_name like '%e%';
 
---¹®Á¦25
---LAST_NAME ÀÌ J·Î ½ÃÀÛÇÏ°í nÀ¸·Î ³¡³ª´Â »ç¶÷ÀÇ LAST_NAME °ú »ç¹ø ¿¬ºÀÀ» Á¶È¸ÇÑ´Ù
+--ë¬¸ì œ25
+--LAST_NAME ì´ Jë¡œ ì‹œìž‘í•˜ê³  nìœ¼ë¡œ ëë‚˜ëŠ” ì‚¬ëžŒì˜ LAST_NAME ê³¼ ì‚¬ë²ˆ ì—°ë´‰ì„ ì¡°íšŒí•œë‹¤
 select  last_name, 
         employee_id,
         salary
@@ -222,8 +222,8 @@ from employees
 where last_name like 'J%'
 and last_name like '%n';
 
---¹®Á¦26
---LAST_NAME ÀÌ J·Î ½ÃÀÛÇÏ°í nÀ¸·Î ³¡³ª´Â »ç¶÷ Áß ÀÌ¸§ÀÌ 4±ÛÀÚÀÎ»ç¶÷ÀÇ »ç¹ø ¿¬ºÀ ÀüÈ­¹øÈ£¸¦ Á¶È¸ÇÑ´Ù
+--ë¬¸ì œ26
+--LAST_NAME ì´ Jë¡œ ì‹œìž‘í•˜ê³  nìœ¼ë¡œ ëë‚˜ëŠ” ì‚¬ëžŒ ì¤‘ ì´ë¦„ì´ 4ê¸€ìžì¸ì‚¬ëžŒì˜ ì‚¬ë²ˆ ì—°ë´‰ ì „í™”ë²ˆí˜¸ë¥¼ ì¡°íšŒí•œë‹¤
 select  employee_id,
         salary,
         phone_number
@@ -232,9 +232,9 @@ where last_name like 'J%'
 and last_name like '%n'
 and last_name like '____';
 
---¹®Á¦27
---Ä¿¹Ì¼ÇÀÌ ÀÖ´Â ¸ðµç »ç¿øµéÀÇ LAST_NAME, ¿¬ºÀ ¹× Ä¿¹Ì¼ÇÀ» Á¶È¸ÇÕ´Ï´Ù.
---Ãâ·Â¼ø¼­´Â ¿¬ºÀ Å«¼ø¼­ ºÎÅÍ, ¿¬ºÀÀÌ °°À»°æ¿ì Ä¿¹Ì¼ÇÀÌ Å«»ç¶÷ºÎÅÍ Ãâ·ÂÇÕ´Ï´Ù.
+--ë¬¸ì œ27
+--ì»¤ë¯¸ì…˜ì´ ìžˆëŠ” ëª¨ë“  ì‚¬ì›ë“¤ì˜ LAST_NAME, ì—°ë´‰ ë° ì»¤ë¯¸ì…˜ì„ ì¡°íšŒí•©ë‹ˆë‹¤.
+--ì¶œë ¥ìˆœì„œëŠ” ì—°ë´‰ í°ìˆœì„œ ë¶€í„°, ì—°ë´‰ì´ ê°™ì„ê²½ìš° ì»¤ë¯¸ì…˜ì´ í°ì‚¬ëžŒë¶€í„° ì¶œë ¥í•©ë‹ˆë‹¤.
 select  last_name,
         salary,
         commission_pct
@@ -242,43 +242,43 @@ from employees
 where commission_pct is not null
 order by salary desc, commission_pct desc;
 
---¹®Á¦28
---¸Å´ÏÀú°¡ ÀÖ´Â »ç¶÷µéÀÇ LAST_NAME ¹× JOB_ID ¸¦ Á¶È¸ÇÑ´Ù.
+--ë¬¸ì œ28
+--ë§¤ë‹ˆì €ê°€ ìžˆëŠ” ì‚¬ëžŒë“¤ì˜ LAST_NAME ë° JOB_ID ë¥¼ ì¡°íšŒí•œë‹¤.
 select  last_name,
         job_id
 from employees
 where manager_id is not null;
 
---¹®Á¦29
---»ç¹ø(employeed_id) ÀÌ¸§(first_name)  ¿¬ºÀ(salary)  10³â¿¬ºÀ(salay10)À» ¿¬ºÀÀÌ ³ôÀº »ç¶÷ºÎÅÍ Ãâ·ÂÇÏ¼¼¿ä
---ÃâÄÃ·³¸íÀº »ç¹ø, ÀÌ¸§, ¿¬ºÀ, 10³â¿¬ºÀ ÀÌ¸ç  ¿¬ºÀ°ú 10³â¿¬ºÀÀº Ãµ´ÜÀ§¿¡ ÄÞ¸¶¸¦ Ç¥½ÃÇÕ´Ï´Ù.
-select  employee_id »ç¹ø,
-        first_name ÀÌ¸§,
-        salary ¿¬ºÀ,
-        to_char(salary*10, '999,999') "10³â¿¬ºÀ"
+--ë¬¸ì œ29
+--ì‚¬ë²ˆ(employeed_id) ì´ë¦„(first_name)  ì—°ë´‰(salary)  10ë…„ì—°ë´‰(salay10)ì„ ì—°ë´‰ì´ ë†’ì€ ì‚¬ëžŒë¶€í„° ì¶œë ¥í•˜ì„¸ìš”
+--ì¶œì»¬ëŸ¼ëª…ì€ ì‚¬ë²ˆ, ì´ë¦„, ì—°ë´‰, 10ë…„ì—°ë´‰ ì´ë©°  ì—°ë´‰ê³¼ 10ë…„ì—°ë´‰ì€ ì²œë‹¨ìœ„ì— ì½¤ë§ˆë¥¼ í‘œì‹œí•©ë‹ˆë‹¤.
+select  employee_id ì‚¬ë²ˆ,
+        first_name ì´ë¦„,
+        salary ì—°ë´‰,
+        to_char(salary*10, '999,999') "10ë…„ì—°ë´‰"
 from employees
 order by salary desc;
 
---¹®Á¦30
---»ç¹ø(employeed_id) ÀÌ¸§(first_name) ¿¬ºÀ(salary)  ¿ù±Þ ¼¼±Ý  ½Ç¼ö·É¾×À» Ãâ·ÂÇÏ¼¼¿ä.
---Ãâ·ÂÄÃ·³¸í°ú °è»ê½ÄÀº »ç¹ø, ÀÌ¸§, ¿¬ºÀ, ¿ù±Þ(¿¬ºÀ/12), ¼¼±Ý(¿¬ºÀ/12*3.3%), ½Ç¼ö·É¾×(¿ù±Þ-¼¼±Ý) ÀÌ¸ç Ãµ´ÜÀ§¿¡ ÄÞ¸¶¸¦ Ãâ·ÂÇÕ´Ï´Ù..
-select  employee_id »ç¹ø,
-        first_name ÀÌ¸§,
-        to_char(salary, '999,999') ¿¬ºÀ,
-        to_char(salary/12, '999,999') ¿ù±Þ,
-        to_char((salary/12)*(3.3/100), '999,999') ¼¼±Ý, 
-        to_char(((salary/12) - ((salary/12)*(3.3/100))), '999,999') ½Ç¼ö·É¾×
+--ë¬¸ì œ30
+--ì‚¬ë²ˆ(employeed_id) ì´ë¦„(first_name) ì—°ë´‰(salary)  ì›”ê¸‰ ì„¸ê¸ˆ  ì‹¤ìˆ˜ë ¹ì•¡ì„ ì¶œë ¥í•˜ì„¸ìš”.
+--ì¶œë ¥ì»¬ëŸ¼ëª…ê³¼ ê³„ì‚°ì‹ì€ ì‚¬ë²ˆ, ì´ë¦„, ì—°ë´‰, ì›”ê¸‰(ì—°ë´‰/12), ì„¸ê¸ˆ(ì—°ë´‰/12*3.3%), ì‹¤ìˆ˜ë ¹ì•¡(ì›”ê¸‰-ì„¸ê¸ˆ) ì´ë©° ì²œë‹¨ìœ„ì— ì½¤ë§ˆë¥¼ ì¶œë ¥í•©ë‹ˆë‹¤..
+select  employee_id ì‚¬ë²ˆ,
+        first_name ì´ë¦„,
+        to_char(salary, '999,999') ì—°ë´‰,
+        to_char(salary/12, '999,999') ì›”ê¸‰,
+        to_char((salary/12)*(3.3/100), '999,999') ì„¸ê¸ˆ, 
+        to_char(((salary/12) - ((salary/12)*(3.3/100))), '999,999') ì‹¤ìˆ˜ë ¹ì•¡
 from employees;
 
---¹®Á¦31
---¾÷¹«(jobs)º°·Î ¾÷¹«ÀÌ¸§(job_title)°ú ÃÖ°í¿ù±Þ(max_salary)À» ¿ù±ÞÀÇ ³»¸²Â÷¼ø(DESC)·Î Á¤·ÄÇÏ¼¼¿ä.
-select  job_title ¾÷¹«ÀÌ¸§,
-        max_salary ÃÖ°í¿ù±Þ
+--ë¬¸ì œ31
+--ì—…ë¬´(jobs)ë³„ë¡œ ì—…ë¬´ì´ë¦„(job_title)ê³¼ ìµœê³ ì›”ê¸‰(max_salary)ì„ ì›”ê¸‰ì˜ ë‚´ë¦¼ì°¨ìˆœ(DESC)ë¡œ ì •ë ¬í•˜ì„¸ìš”.
+select  job_title ì—…ë¬´ì´ë¦„,
+        max_salary ìµœê³ ì›”ê¸‰
 from jobs
 order by max_salary desc;
 
---¹®Á¦32
---´ã´ç ¸Å´ÏÀú°¡ ¹èÁ¤µÇ¾îÀÖÀ¸³ª Ä¿¹Ì¼ÇºñÀ²ÀÌ ¾ø°í, ¿ù±ÞÀÌ 3000ÃÊ°úÀÎ Á÷¿øÀÇ ÀÌ¸§, ¸Å´ÏÀú¾ÆÀÌµð, Ä¿¹Ì¼Ç ºñÀ², ¿¬ºÀ À» Ãâ·ÂÇÏ¼¼¿ä.
+--ë¬¸ì œ32
+--ë‹´ë‹¹ ë§¤ë‹ˆì €ê°€ ë°°ì •ë˜ì–´ìžˆìœ¼ë‚˜ ì»¤ë¯¸ì…˜ë¹„ìœ¨ì´ ì—†ê³ , ì›”ê¸‰ì´ 3000ì´ˆê³¼ì¸ ì§ì›ì˜ ì´ë¦„, ë§¤ë‹ˆì €ì•„ì´ë””, ì»¤ë¯¸ì…˜ ë¹„ìœ¨, ì—°ë´‰ ì„ ì¶œë ¥í•˜ì„¸ìš”.
 select  last_name,
         manager_id,
         commission_pct,
@@ -288,16 +288,16 @@ where commission_pct is null
 and manager_id is not null
 and salary > 3000;
 
---¹®Á¦33
---ÃÖ°í¿ù±Þ(max_salary)ÀÌ 10000 ÀÌ»óÀÎ ¾÷¹«ÀÇ ÀÌ¸§(job_title)°ú ÃÖ°í¿ù±Þ(max_salary)À» ÃÖ°í¿ù±ÞÀÇ(max_salary) ³»¸²Â÷¼ø(DESC)·Î Á¤·ÄÇÏ¿© Ãâ·ÂÇÏ¼¼¿ä.    
+--ë¬¸ì œ33
+--ìµœê³ ì›”ê¸‰(max_salary)ì´ 10000 ì´ìƒì¸ ì—…ë¬´ì˜ ì´ë¦„(job_title)ê³¼ ìµœê³ ì›”ê¸‰(max_salary)ì„ ìµœê³ ì›”ê¸‰ì˜(max_salary) ë‚´ë¦¼ì°¨ìˆœ(DESC)ë¡œ ì •ë ¬í•˜ì—¬ ì¶œë ¥í•˜ì„¸ìš”.    
 select  job_title,
         max_salary
 from jobs
 where max_salary >= 10000
 order by max_salary desc;
 
---¹®Á¦34
---¿¬ºÀÀÌ 14000 ¹Ì¸¸ 10000 ÀÌ»óÀÎ Á÷¿øÀÇ ÀÌ¸§(first_name), ¿ù±Þ, Ä¿¹Ì¼ÇÆÛ¼¾Æ® ¸¦  ¿¬ºÀ¼ø(³»¸²Â÷¼ø) Ãâ·ÂÇÏ¼¼¿À. ´Ü Ä¿¹Ì¼ÇÆÛ¼¾Æ® °¡ null ÀÌ¸é 0 À¸·Î ³ªÅ¸³»½Ã¿À
+--ë¬¸ì œ34
+--ì—°ë´‰ì´ 14000 ë¯¸ë§Œ 10000 ì´ìƒì¸ ì§ì›ì˜ ì´ë¦„(first_name), ì›”ê¸‰, ì»¤ë¯¸ì…˜í¼ì„¼íŠ¸ ë¥¼  ì—°ë´‰ìˆœ(ë‚´ë¦¼ì°¨ìˆœ) ì¶œë ¥í•˜ì„¸ì˜¤. ë‹¨ ì»¤ë¯¸ì…˜í¼ì„¼íŠ¸ ê°€ null ì´ë©´ 0 ìœ¼ë¡œ ë‚˜íƒ€ë‚´ì‹œì˜¤
 select  first_name,
         salary,
         nvl(commission_pct, 0)
@@ -306,10 +306,10 @@ where salary < 14000
 and salary >= 10000
 order by salary desc;
 
---¹®Á¦35
---ºÎ¼­¹øÈ£°¡ 10, 90, 100 ÀÎ Á÷¿øÀÇ ÀÌ¸§, ¿¬ºÀ, ÀÔ»çÀÏ, ºÎ¼­¹øÈ£¸¦ ³ªÅ¸³»½Ã¿À
---ÀÔ»çÀÏÀº 2007-12-22 12:00:00 (³â-¿ù) ¿Í °°ÀÌ Ç¥½ÃÇÏ½Ã¿À
---(½Ã°£Àº 12:00:00 À¸·Î Ç¥ÇöµË´Ï´Ù)
+--ë¬¸ì œ35
+--ë¶€ì„œë²ˆí˜¸ê°€ 10, 90, 100 ì¸ ì§ì›ì˜ ì´ë¦„, ì—°ë´‰, ìž…ì‚¬ì¼, ë¶€ì„œë²ˆí˜¸ë¥¼ ë‚˜íƒ€ë‚´ì‹œì˜¤
+--ìž…ì‚¬ì¼ì€ 2007-12-22 12:00:00 (ë…„-ì›”) ì™€ ê°™ì´ í‘œì‹œí•˜ì‹œì˜¤
+--(ì‹œê°„ì€ 12:00:00 ìœ¼ë¡œ í‘œí˜„ë©ë‹ˆë‹¤)
 select  first_name,
         salary,
         to_char(hire_date, 'yyyy-mm-dd hh:mi:ss'),
@@ -317,31 +317,31 @@ select  first_name,
 from employees
 where department_id in (10, 90, 100);
 
---¹®Á¦36
---ÀÌ¸§(first_name)¿¡ S ¶Ç´Â s °¡ µé¾î°¡´Â Á÷¿øÀÇ ÀÌ¸§, ¿¬ºÀÀ» ³ªÅ¸³»½Ã¿À
+--ë¬¸ì œ36
+--ì´ë¦„(first_name)ì— S ë˜ëŠ” s ê°€ ë“¤ì–´ê°€ëŠ” ì§ì›ì˜ ì´ë¦„, ì—°ë´‰ì„ ë‚˜íƒ€ë‚´ì‹œì˜¤
 select  first_name,
         salary
 from employees
 where first_name like '%s%'
 or first_name like '%S%';
 
---¹®Á¦37
---ÀüÃ¼ ºÎ¼­¸¦ Ãâ·ÂÇÏ·Á°í ÇÕ´Ï´Ù. ¼ø¼­´Â ºÎ¼­ÀÌ¸§ÀÌ ±ä ¼ø¼­´ë·Î Ãâ·ÂÇØ º¸¼¼¿ä.
+--ë¬¸ì œ37
+--ì „ì²´ ë¶€ì„œë¥¼ ì¶œë ¥í•˜ë ¤ê³  í•©ë‹ˆë‹¤. ìˆœì„œëŠ” ë¶€ì„œì´ë¦„ì´ ê¸´ ìˆœì„œëŒ€ë¡œ ì¶œë ¥í•´ ë³´ì„¸ìš”.
 select *
 from departments
 order by length(department_name) desc;
 
---¹®Á¦38
---Áö»ç°¡ ÀÖÀ» °ÍÀ¸·Î ¿¹»óµÇ´Â ³ª¶óµéÀ» ³ª¶óÀÌ¸§À» ´ë¹®ÀÚ·Î Ãâ·ÂÇÏ°í
---¿Ã¸²Â÷¼ø(ASC)À¸·Î Á¤·ÄÇØ º¸¼¼¿À.
+--ë¬¸ì œ38
+--ì§€ì‚¬ê°€ ìžˆì„ ê²ƒìœ¼ë¡œ ì˜ˆìƒë˜ëŠ” ë‚˜ë¼ë“¤ì„ ë‚˜ë¼ì´ë¦„ì„ ëŒ€ë¬¸ìžë¡œ ì¶œë ¥í•˜ê³ 
+--ì˜¬ë¦¼ì°¨ìˆœ(ASC)ìœ¼ë¡œ ì •ë ¬í•´ ë³´ì„¸ì˜¤.
 select upper(country_name)
 from countries
 where region_id > 1
 order by country_name asc;
 
---¹®Á¦39
---ÀÔ»çÀÏÀÌ 03/12/31 ÀÏ ÀÌÀü ÀÔ»çÇÑ Á÷¿øÀÇ ÀÌ¸§, ¿¬ºÀ, ÀüÈ­ ¹øÈ£, ÀÔ»çÀÏÀ» Ãâ·ÂÇÏ¼¼¿ä
---ÀüÈ­¹øÈ£´Â 545-343-3433 °ú °°Àº ÇüÅÂ·Î Ãâ·ÂÇÏ½Ã¿À.
+--ë¬¸ì œ39
+--ìž…ì‚¬ì¼ì´ 03/12/31 ì¼ ì´ì „ ìž…ì‚¬í•œ ì§ì›ì˜ ì´ë¦„, ì—°ë´‰, ì „í™” ë²ˆí˜¸, ìž…ì‚¬ì¼ì„ ì¶œë ¥í•˜ì„¸ìš”
+--ì „í™”ë²ˆí˜¸ëŠ” 545-343-3433 ê³¼ ê°™ì€ í˜•íƒœë¡œ ì¶œë ¥í•˜ì‹œì˜¤.
 select  first_name,
         salary,
         replace(phone_number, '.', '-'),
