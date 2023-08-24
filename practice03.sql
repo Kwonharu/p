@@ -134,27 +134,17 @@ select  d.department_id 부서번호,
         l.city "위치한 도시",
         c.country_name "나라 이름",
         r.region_name "지역 이름"
-        
 from departments d,
      employees e,
-
      locations l,
      countries c,
      regions r
-where d.department_id = e.department_id
-
+where d.manager_id = e.employee_id
+and d.department_id = e.department_id
 and d.location_id = l.location_id
 and l.country_id = c.country_id
-and c.region_id = r.region_id;
-
-
---select  d.department_id,
---        d.department_name,
---        e.first_name
---from departments d, employees e
---where d.department_id = e.department_id
---and d.manager_id = e.manager_id
---order by d.department_id desc;
+and c.region_id = r.region_id
+order by d.department_id desc;
 
 
 
