@@ -49,9 +49,14 @@ where ed.location_id = l.location_id;
 --문제4.
 --job_id 가 'ST_MAN' 인 직원의 급여보다 작은 직원의 사번,이름,급여를 급여의 내림차순으로 출력하세요  -ANY연산자 사용
 --(74건)
-select salary
+select  employee_id,
+        first_name,
+        salary
 from employees
-where job_id = 'ST_MAN';
+where salary <any (select salary
+                   from employees
+                   where job_id = 'ST_MAN')
+order by salary desc;
 
 
 --문제5. 
@@ -59,31 +64,85 @@ where job_id = 'ST_MAN';
 --단 조회결과는 급여의 내림차순으로 정렬되어 나타나야 합니다. 
 --조건절비교, 테이블조인 2가지 방법으로 작성하세요
 --(11건)
---
---
---
---
+
+--조건절비교
+select  employee_id,
+        first_name,
+        salary,
+        department_id
+from employees
+where (department_id, salary) in (select department_id,
+                                         max(salary)
+                                  from employees
+                                  group by department_id)
+order by salary desc;
+
+--테이블조인
+select  employee_id,
+        first_name,
+        salary,
+        e.department_id
+from employees e, (select department_id,
+                          max(salary) m
+                   from employees
+                   group by department_id) ms
+where e.salary = ms.m
+and e.department_id = ms.department_id
+order by salary desc;
+
+
 --문제6.
 --각 업무(job) 별로 연봉(salary)의 총합을 구하고자 합니다. 
 --연봉 총합이 가장 높은 업무부터 업무명(job_title)과 연봉 총합을 조회하시오 
 --(19건)
---
---
---
---
+select j.job_title,
+       e.s
+from jobs j, (select sum(salary) s,
+                     job_id
+              from employees
+              group by job_id) e
+where e.job_id = j.job_id
+order by e.s desc;
+
+
 --문제7.
 --자신의 부서 평균 급여보다 연봉(salary)이 많은 직원의 직원번호(employee_id), 이름(first_name)과 급여(salary)을 조회하세요 
 --(38건)
---
---
---
---
+select  employee_id,
+        first_name,
+        salary
+from employees e, (select avg(salary) s,
+                          department_id
+                   from employees
+                   group by department_id) d
+where e.salary > d.s
+and e.department_id = d.department_id;
+
+
 --문제8.
 --직원 입사일이 11번째에서 15번째의 직원의 사번, 이름, 급여, 입사일을 입사일 순서로 출력하세요
--- 
---
---
---
---
---
---
+
+select  rn,
+        employee_id,
+        first_name,
+        salary,
+        hire_date
+from (select rownum rn,
+             employee_id,
+             first_name,
+             salary,
+             hire_date
+      from (select employee_id,
+                   first_name,
+                   salary,
+                   hire_date
+            from employees
+            order by hire_date asc)
+)
+where rn between 11 and 15;
+
+
+
+
+
+
