@@ -21,7 +21,18 @@ and salary > 3000;
 ---입사일은 2001-01-13 토요일 형식으로 출력합니다.
 ---전화번호는 515-123-4567 형식으로 출력합니다.
 --(11건)
-
+select  employee_id,
+        first_name,
+        salary,
+        to_char(hire_date, 'yyyy-mm-dd" "day'),
+        replace(phone_number, '.', '-'),
+        department_id
+from employees
+where (department_id, salary) in (select department_id,
+                                         max(salary)
+                                  from employees
+                                  GROUP by department_id)
+order by salary desc;
 
 
 --문제3
@@ -32,11 +43,18 @@ and salary > 3000;
 ---매니저별 평균급여는 소수점 첫째자리에서 반올림 합니다.
 ---출력내용은 매니저아이디, 매니저이름(first_name), 매니저별평균급여, 매니저별최소급여, 매니저별최대급여 입니다.
 --(9건)
---
---
---
---
---
+select  m.employee_id,
+        m.first_name
+from employees e, employees m
+where e.manager_id = m.employee_id;
+
+select  avg(salary) avg,
+        min(salary) min,
+        max(salary) max,
+        manager_id
+from employees
+GROUP by manager_id;
+
 --문제4.
 --각 사원(employee)에 대해서 사번(employee_id), 이름(first_name), 부서명(department_name), 매니저(manager)의 이름(first_name)을 조회하세요.
 --부서가 없는 직원(Kimberely)도 표시합니다.
