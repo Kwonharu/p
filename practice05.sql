@@ -55,6 +55,8 @@ select  avg(salary) avg,
 from employees
 GROUP by manager_id;
 
+
+
 --문제4.
 --각 사원(employee)에 대해서 사번(employee_id), 이름(first_name), 부서명(department_name), 매니저(manager)의 이름(first_name)을 조회하세요.
 --부서가 없는 직원(Kimberely)도 표시합니다.
