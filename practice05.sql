@@ -56,29 +56,26 @@ group by e.manager_id,
 having avg(m.salary) > 5000
 order by avg(m.salary) desc;
 
-select  e.manager_id 매니저아이디,
-        m.first_name 매니저이름,
-        m.salary
-from employees e, employees m
-where e.manager_id = m.employee_id
-and to_char(m.hire_date, 'yy') >= 05;
-
 
 --문제4.
 --각 사원(employee)에 대해서 사번(employee_id), 이름(first_name), 부서명(department_name), 매니저(manager)의 이름(first_name)을 조회하세요.
 --부서가 없는 직원(Kimberely)도 표시합니다.
 --(106명)
-
+select  e.employee_id,
+        e.first_name,
+        d.department_name,
+        m.first_name
+from employees e left outer join departments d
+on e.department_id = d.department_id, employees m
+where e.manager_id = m.employee_id;
 
 
 --문제5.
 --2005년 이후 입사한 직원중에 입사일이 11번째에서 20번째의 직원의 
 --사번, 이름, 부서명, 급여, 입사일을 입사일 순서로 출력하세요
---
---
---
---
---
+
+
+
 --문제6.
 --가장 늦게 입사한 직원의 이름(first_name last_name)과 연봉(salary)과 근무하는 부서 이름(department_name)은?
 -- 
