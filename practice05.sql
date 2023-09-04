@@ -78,11 +78,9 @@ where e.manager_id = m.employee_id;
 
 --문제6.
 --가장 늦게 입사한 직원의 이름(first_name last_name)과 연봉(salary)과 근무하는 부서 이름(department_name)은?
--- 
---
---
---
---
+
+
+
 --문제7.
 --평균연봉(salary)이 가장 높은 부서 직원들의 직원번호(employee_id), 이름(firt_name), 성(last_name)과  업무(job_title), 연봉(salary)을 조회하시오.
 -- 
