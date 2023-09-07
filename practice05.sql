@@ -73,39 +73,88 @@ where e.manager_id = m.employee_id;
 --문제5.
 --2005년 이후 입사한 직원중에 입사일이 11번째에서 20번째의 직원의 
 --사번, 이름, 부서명, 급여, 입사일을 입사일 순서로 출력하세요
+select  rn,
+        사번,
+        이름,
+        부서명,
+        급여,
+        입사일  
+from(select rownum rn,
+            사번,
+            이름,
+            부서명,
+            급여,
+            입사일  
+    from(select e.employee_id 사번,
+                e.first_name 이름,
+                d.department_name 부서명,
+                e.salary 급여,
+                e.hire_date 입사일 
+        from employees e, departments d
+        where e.department_id = d.department_id
+        and to_char(hire_date, 'yy') > '05'
+        order by hire_date asc)
+    )
+where rn >= 11
+and rn <= 20;
 
 
 
 --문제6.
 --가장 늦게 입사한 직원의 이름(first_name last_name)과 연봉(salary)과 근무하는 부서 이름(department_name)은?
-
+select  rn,
+        사번,
+        이름,
+        부서명,
+        급여
+from(select rownum rn,
+            사번,
+            이름,
+            부서명,
+            급여
+    from(select e.employee_id 사번,
+                e.first_name || ' ' || e.last_name 이름,
+                d.department_name 부서명,
+                e.salary 급여
+        from employees e, departments d
+        where e.department_id = d.department_id
+        order by hire_date desc)
+    )
+where rn = 1;
 
 
 --문제7.
 --평균연봉(salary)이 가장 높은 부서 직원들의 직원번호(employee_id), 이름(firt_name), 성(last_name)과  업무(job_title), 연봉(salary)을 조회하시오.
--- 
---
---
---
---
---
+select  e.employee_id,
+        e.first_name,
+        e.last_name,
+        j.job_title,
+        e.salary,
+        e.department_id
+from employees e, jobs j, (select avg(salary) as,
+                                  department_id,
+                                  employee_id
+                           from employees
+                           group by department_id, employee_id
+                           order by avg(salary) desc) d
+where e.job_id = j.job_id
+and e.department_id = d.department_id;
+
+
+
+
 --문제8.
 --평균 급여(salary)가 가장 높은 부서는? 
--- 
---
---
---
---
+
+
+
 --문제9.
 --평균 급여(salary)가 가장 높은 지역은? 
--- 
---
---
---
---
+
+
+
 --문제10.
 --평균 급여(salary)가 가장 높은 업무는? 
--- 
---
---
---
+
+
+
